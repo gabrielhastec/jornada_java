@@ -1,5 +1,5 @@
 
-public class OperadoresAritmeticos {
+public class operArit {
 
     public static void main(String[] args) {
 
