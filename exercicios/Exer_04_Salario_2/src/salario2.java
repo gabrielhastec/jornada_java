@@ -44,7 +44,7 @@ public class salario2 {
         verificacao = sc.nextLine();
         verificacao = sc.nextLine();
 
-        if (verificacao == "y"){
+        if (verificacao.equalsIgnoreCase("y")){
             contratado = true;
         } else {
             contratado = false;
@@ -86,7 +86,7 @@ public class salario2 {
         if (contratado == true){
             System.out.printf("Desconto INSS = | %.2f\n", desconto);
         } else {
-            System.out.printf("---------------------------------");
+            System.out.printf("--------------------------------- \n");
         }
         
         System.out.printf("Saldo Final = | %.2f\n", saldoFinal);
