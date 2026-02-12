@@ -7,17 +7,17 @@ public class calculadora {
         Scanner sc = new Scanner (System.in);
 
         System.out.println("======== CALCULADORA ========");
-        int opcao1, opcao2, dgVerificador;
+        int opcao1, opcao2, saida, dgVerificador;
         double resultado;
 
-        System.out.println("----- Dígitos das operações: -----");
+        System.out.println("--- Dígitos das operações: ---");
         System.out.println(" 1 - Adição ");
         System.out.println(" 2 - Subtração ");
         System.out.println(" 3 - Multiplicação ");
         System.out.println(" 4 - Divisão ");
-        System.out.println(" 0 - Sair ");
 
         do {
+            System.out.println("---------------------------");
             System.out.println("Digite o primeiro digito: ");
             opcao1 = sc.nextInt();
             System.out.println("Digite o segundo digito: ");
@@ -30,32 +30,37 @@ public class calculadora {
                 case 1:
                     resultado = opcao1 + opcao2;
                     System.out.println("O resultado é: " + resultado);
-                    dgVerificador = 0;
+                    System.out.println("---------------------------");
                     break;
                 case 2:
                     resultado = opcao1 - opcao2;
                     System.out.println("O resultado é: " + resultado);
-                    dgVerificador = 0;
+                    System.out.println("---------------------------");
                     break;
                 case 3:
                     resultado = opcao1 * opcao2;
                     System.out.println("O resultado é: " + resultado);
-                    dgVerificador = 0;
+                    System.out.println("---------------------------");
                     break;
                 case 4:
                     resultado = opcao1 / opcao2;
                     System.out.println("O resultado é: " + resultado);
-                    dgVerificador = 0;
-                    break;
-                case 0:
+                    System.out.println("---------------------------");
                     break;
                 default:
                     System.out.println("Opção inválida!");
-                    dgVerificador = 0;
+                    System.out.println("---------------------------");
                     break;
             }
 
-        } while (dgVerificador == 0);
+            System.out.println("Deseja fazer outra operação? ");
+            System.out.println(" 1 - Sim ");
+            System.out.println(" 2 - Não ");
+            saida = sc.nextInt();
+
+        } while (saida == 1);
+
+        System.out.println("======= ENCERRANDO... =======");
 
         sc.close();
         
