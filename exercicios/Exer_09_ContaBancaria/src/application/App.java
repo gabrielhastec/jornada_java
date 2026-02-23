@@ -12,14 +12,17 @@ import java.util.Scanner;
 public class App {
 
     public static void main(String[] args) {
+
         Scanner sc = new Scanner(System.in);
         List<Cliente> clientes = new ArrayList<>();
 
         CadastroService cadastroService = new CadastroService();
         BancoService bancoService = new BancoService(clientes);
 
-        int opcao;
+        int opcao; 
+
         do {
+            
             Menu.exibirMenuPrincipal();
             opcao = sc.nextInt();
             sc.nextLine();

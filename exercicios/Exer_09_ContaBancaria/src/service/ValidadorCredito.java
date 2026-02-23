@@ -5,6 +5,7 @@ import entities.Cliente;
 public class ValidadorCredito {
 
     public static double calcularLimite(Cliente cliente) {
+        
         double base = cliente.getSalario() * 0.3; // 30% do salário como base
 
         // Ajuste por idade
