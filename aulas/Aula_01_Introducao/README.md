@@ -85,7 +85,7 @@ Olá Mundo
 ## 💻 Código da Aula
 
 ```java
-public class helloWord {
+public class HelloWorld {
     public static void main(String[] args) {
 
         // Exibe mensagem sem quebra de linha
@@ -106,13 +106,13 @@ public class helloWord {
 No terminal, dentro da pasta `src`:
 
 ```bash
-javac helloWord.java
+javac HelloWorld.java
 ```
 
 Isso irá gerar um arquivo:
 
 ```
-helloWord.class
+HelloWorld.class
 ```
 
 ---
@@ -120,7 +120,7 @@ helloWord.class
 ### 🔹 2. Executar o programa
 
 ```bash
-java helloWord
+java HelloWorld
 ```
 
 📌 Importante:
@@ -133,7 +133,7 @@ Não coloque `.java` ao executar.
 Quando você executa:
 
 ```bash
-javac helloWord.java
+javac HelloWorld.java
 ```
 
 O compilador Java transforma o código `.java` em **bytecode** (`.class`).
@@ -141,7 +141,7 @@ O compilador Java transforma o código `.java` em **bytecode** (`.class`).
 Depois, quando você executa:
 
 ```bash
-java helloWord
+java HelloWorld
 ```
 
 A **JVM (Java Virtual Machine)** interpreta esse bytecode e executa o programa.

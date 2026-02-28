@@ -2,7 +2,7 @@
 // Todo programa Java começa com uma classe
 // O nome da classe deve ser o mesmo nome do arquivo (HelloWorld.java)
 
-public class helloWord {
+public class HelloWorld {
 
     // O método main é o ponto de entrada do programa
     // É por aqui que o Java começa a executar o código
