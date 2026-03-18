@@ -1,6 +1,5 @@
 package repositories;
 
-import entities.Conta;
 import entities.Identificavel;
 import exceptions.ContaNaoEncontradaException;
 
