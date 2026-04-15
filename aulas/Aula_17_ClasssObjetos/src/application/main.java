@@ -1,11 +1,12 @@
 package application;
-import entities.contaBancaria;
+import entities.ContaBancaria;
 
-public class main {
-    public static void Main(String[] args) {
+public class Main {
+
+    public static void main(String[] args) {
 
         // Criando um objeto (instância) da classe ContaBancaria
-        contaBancaria conta1 = new contaBancaria();
+        ContaBancaria conta1 = new ContaBancaria();
         conta1.titular = "João";
         conta1.numero = 123;
         conta1.saldo = 1000.0;

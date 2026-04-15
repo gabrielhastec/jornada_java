@@ -1,6 +1,6 @@
 package entities;
 
-public class contaBancaria {
+public class ContaBancaria {
     // Atributos (características da conta)
     public String titular;
     public int numero;
