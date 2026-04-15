@@ -1,6 +1,6 @@
 
 public class procDeDados {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
 
         int x1, x2;
 
