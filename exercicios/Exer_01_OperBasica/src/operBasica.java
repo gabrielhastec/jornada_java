@@ -4,7 +4,7 @@ com uma mensagem explicativa */
 
 import java.util.Scanner;
 
-public class operBasica {
+public class OperBasica {
 
     public static void main(String[] args) {
         

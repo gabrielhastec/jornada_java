@@ -8,7 +8,7 @@ e mostre o valor a ser pago.
 
 import java.util.Scanner;
 
-public class venda {
+public class Venda {
 
     public static void main(String[] args) {
 
