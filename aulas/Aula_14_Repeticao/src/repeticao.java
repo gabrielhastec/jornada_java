@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class repeticao {
+public class Repeticao {
     
     public static void main(String[] args) {
         

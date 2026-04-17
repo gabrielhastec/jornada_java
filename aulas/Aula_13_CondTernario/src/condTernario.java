@@ -1,4 +1,4 @@
-public class condTernario {
+public class CondTernario {
     
     public static void main(String[] args) {
         

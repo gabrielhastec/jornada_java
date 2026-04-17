@@ -1,7 +1,7 @@
 
 import java.util.Locale;
 
-public class saidaDados {
+public class SaidaDados {
 
     public static void main(String[] args) {
 

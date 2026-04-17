@@ -1,4 +1,4 @@
-public class extraMath {
+public class ExtraMath {
     
     public static void main(String[] args) {
         

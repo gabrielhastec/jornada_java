@@ -1,5 +1,5 @@
 
-public class procDeDados {
+public class ProcDeDados {
     public static void main(String[] args) {
 
         int x1, x2;

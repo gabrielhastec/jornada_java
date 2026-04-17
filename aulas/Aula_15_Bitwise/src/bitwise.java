@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class bitwise {
+public class Bitwise {
     
     public static void main(String[] args) {
         

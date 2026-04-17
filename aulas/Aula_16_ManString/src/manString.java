@@ -1,4 +1,4 @@
-public class manString {
+public class ManString {
     public static void main(String[] args) {
         
         String original = "Java é uma linguagem de programação.";

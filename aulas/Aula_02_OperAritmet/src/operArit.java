@@ -1,5 +1,5 @@
 
-public class operArit {
+public class OperArit {
 
     public static void main(String[] args) {
 

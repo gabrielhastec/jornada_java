@@ -1,5 +1,5 @@
 
-public class expLogica {
+public class ExpLogica {
     
     public static void main(String[] args) {
         

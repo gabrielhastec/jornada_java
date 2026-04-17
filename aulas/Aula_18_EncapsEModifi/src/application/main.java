@@ -1,10 +1,10 @@
 
 package application;
-import entities.produto;
+import entities.Produto;
 
-public class main {
+public class Main {
     public static void Main(String[] args) {
-        produto p = new produto("Notebook", 2500.0, 10);
+        Produto p = new Produto("Notebook", 2500.0, 10);
         System.out.println("Produto: " + p.getNome());
         System.out.println("Preço: R$" + p.getPreco());
         System.out.println("Quantidade: " + p.getQuantidade());

@@ -1,5 +1,5 @@
 
-public class variaveisJava {
+public class VariaveisJava {
 
     public static void main (String[] args){
 
