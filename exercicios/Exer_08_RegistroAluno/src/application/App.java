@@ -4,35 +4,37 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import entities.aluno;
-import entities.professor;
-import utils.menu;
+import entities.Aluno;
+import entities.Professor;
+import service.AlunoService;
+import utils.Menu;
 
-public class app {
+public class App {
 
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
-        List<aluno> listaAlunos = new ArrayList<>();
-        List<professor> listaProfessores = new ArrayList<>();
+        List<Aluno> listaAlunos = new ArrayList<>();
+        List<Professor> listaProfessores = new ArrayList<>();
+        AlunoService alunoService = new AlunoService(listaAlunos);
 
         int opcao;
 
         do {
-            opcao = menu.menuPrincipal(sc);
+            opcao = Menu.menuPrincipal(sc);
 
             switch (opcao) {
 
                 case 1:
-                    menu.menuAluno(sc, listaAlunos);
+                    Menu.menuAluno(sc, alunoService);
                     break;
 
                 case 2:
-                    menu.menuProfessor(sc, listaProfessores);
+                    Menu.menuProfessor(sc, listaProfessores);
                     break;
-                
+
                 case 3:
-                    menu.menuRelatorios(listaAlunos);
+                    Menu.menuRelatorios(sc, alunoService);
                     break;
 
                 case 0:
@@ -40,7 +42,7 @@ public class app {
                     break;
 
                 default:
-                    System.out.println("Opção inválida!");
+                    System.out.println("Opcao invalida!");
             }
 
         } while (opcao != 0);

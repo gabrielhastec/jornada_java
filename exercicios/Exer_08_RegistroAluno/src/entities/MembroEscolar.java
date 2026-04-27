@@ -1,14 +1,13 @@
 package entities;
 
-public class professor {
+public abstract class MembroEscolar {
 
-    private int matricula;
-    private String nome, materia;
+    protected int matricula;
+    protected String nome;
 
-    public professor(int matricula, String nome, String materia) {
+    public MembroEscolar(int matricula, String nome) {
         this.matricula = matricula;
         this.nome = nome;
-        this.materia = materia;
     }
 
     public int getMatricula() {
@@ -19,12 +18,8 @@ public class professor {
         return nome;
     }
 
-    public String getMateria () {
-        return materia;
-    }
-
     public void setNome(String nome) {
         this.nome = nome;
     }
-
+    
 }
