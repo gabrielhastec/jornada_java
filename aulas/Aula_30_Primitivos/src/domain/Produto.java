@@ -26,8 +26,17 @@ public class Produto {
     public int getId() { return id; }
     public double getPreco() { return preco; }
     public void setPreco(double preco) { this.preco = preco; }
+    public float getPeso() { return peso; }
 
     public void exibir() {
-        System.out.println(id + " - " + nome + " | R$ " + preco + " | Estoque: " + estoque);
+        System.out.println("ID: " + id);
+        System.out.println("Nome: " + nome);
+        System.out.println("Preço: R$ " + preco);
+        System.out.println("Estoque: " + estoque);
+        System.out.println("Ativo: " + ativo);
+        System.out.println("Categoria: " + categoria);
+        System.out.println("Código de Barras: " + codigoBarras);
+        System.out.println("Peso: " + peso + " kg");
     }
+
 }
