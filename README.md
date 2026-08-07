@@ -69,4 +69,4 @@ cd 03-projetos/01-catalogo-api && docker compose up -d && mvn spring-boot:run
 ## Contato
 
 - GitHub: [@gabrielhastec](https://github.com/gabrielhastec)
-- LinkedIn: _(preencher)_
+- LinkedIn: gabrielhastec
