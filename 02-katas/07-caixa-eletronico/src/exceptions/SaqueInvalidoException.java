@@ -1,4 +1,4 @@
-package excepitions;
+package exceptions;
 
 public class SaqueInvalidoException extends Exception {
 

@@ -1,7 +1,7 @@
 package application;
 
 import service.CaixaService;
-import util.Menu;
+import utils.Menu;
 
 import java.util.Scanner;
 

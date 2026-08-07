@@ -1,7 +1,7 @@
 package service;
 
 import entities.Saque;
-import excepitions.SaqueInvalidoException;
+import exceptions.SaqueInvalidoException;
 import entities.Nota;
 
 public class CaixaService {

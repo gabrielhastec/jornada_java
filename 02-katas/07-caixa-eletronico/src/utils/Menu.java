@@ -1,8 +1,8 @@
-package util;
+package utils;
 
 import entities.Nota;
 import entities.Saque;
-import excepitions.SaqueInvalidoException;
+import exceptions.SaqueInvalidoException;
 import service.CaixaService;
 
 import java.util.Scanner;
