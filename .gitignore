@@ -1,5 +1,43 @@
-
+# ==========================================================
+# Ferramentas e configuracao de ambiente
+# ==========================================================
 .claude
 .vscode
 .github
 .idea
+
+# ==========================================================
+# Artefatos de compilacao
+# Codigo compilado nunca se versiona: e gerado a partir do fonte,
+# suja o diff de todo commit e quebra ao trocar de versao do JDK.
+# ==========================================================
+bin/
+out/
+build/
+target/
+*.class
+*.jar
+*.war
+
+# ==========================================================
+# Sistema operacional
+# ==========================================================
+desktop.ini
+Thumbs.db
+.DS_Store
+
+# ==========================================================
+# Segredos e ambiente local (nunca comitar credencial)
+# ==========================================================
+.env
+.env.local
+*.local.properties
+application-local.yml
+application-local.properties
+
+# ==========================================================
+# Logs e temporarios
+# ==========================================================
+*.log
+logs/
+tmp/
