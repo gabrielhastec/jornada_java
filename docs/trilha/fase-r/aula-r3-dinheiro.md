@@ -3,9 +3,10 @@
 **Fase R · Semana 3 · ~2h**
 
 **Pré-requisitos (o que você já viu e vai usar aqui):**
-- Aula 30 — tipos primitivos, sufixos (`10L`, `1.5f`), classes wrapper
-- Aula 17/18 — classe, atributo, construtor, método
-- Aula 28 — o que é lançar uma exceção com `throw` (usado no final, de forma simples)
+- Aula 03 — variáveis, os 8 tipos primitivos, sufixos (`10L`, `1.5f`) e por que `double` é aproximado
+- Aula 17 — método: parâmetro, retorno, sobrecarga
+- Aula 18/19 — classe, atributo, construtor
+- Aula 29 — o que é lançar uma exceção com `throw` (usado no final, de forma simples)
 
 **Conceito novo desta aula:** a classe `BigDecimal`. Ela é explicada do zero — você não precisa ter visto nada sobre ela.
 
@@ -206,7 +207,7 @@ Converta os valores monetários para `BigDecimal`, nesta ordem (do menor para o 
 - Critério: o valor por hora aceita centavos (hoje é `int`, o que já é um bug — R$ 18,50 vira R$ 18,00)
 - Critério: a saída continua mostrando duas casas decimais
 
-**Tarefa 2 — Aula 18 (`01-fundamentos/18-encapsulamento-e-modificadores/`).** `Produto` com `preco` e `valorEstoque()`.
+**Tarefa 2 — Aula 19 (`01-fundamentos/19-encapsulamento-e-modificadores/`).** `Produto` com `preco` e `valorEstoque()`.
 - Critério: `valorEstoque()` devolve `BigDecimal` com escala 2
 - Critério: nenhum `new BigDecimal(double)` no código
 

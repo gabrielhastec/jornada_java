@@ -3,9 +3,9 @@
 **Fase R · Semana 4 · ~2h**
 
 **Pré-requisitos (o que você já viu e vai usar aqui):**
-- Aulas 17 a 20 — classe, atributo, método, construtor, composição
-- Aula 23 — o que é uma interface (citada no final, sem exigir domínio)
-- Aulas 30 e 31 — **você já fez isso certo**: `domain`, `repository`, `service`, `ui`
+- Aulas 18 a 21 — classe, atributo, método, construtor, composição
+- Aula 24 — o que é uma interface (citada no final, sem exigir domínio)
+- Aula 31 — **você já fez isso certo**: `domain`, `repository`, `service`, `ui`
 
 **Conceito novo desta aula:** separação de responsabilidades entre camadas, na prática.
 
@@ -25,7 +25,7 @@
 >
 > A regra funcionou. Ela **avisou**. Só que avisou no lugar onde só o servidor vê — e ninguém contou para o cliente, nem para a API.
 
-Esse cenário é literal: é o comportamento do seu `Produto` da aula 18, e o mesmo padrão está em **11 arquivos** do repositório ([auditoria](../../AUDITORIA.md), Achado 5).
+Esse cenário é literal: é o comportamento do seu `Produto` da aula 19, e o mesmo padrão está em **11 arquivos** do repositório ([auditoria](../../AUDITORIA.md), Achado 5).
 
 ---
 
@@ -97,7 +97,7 @@ Ninguém aponta para trás: domain NÃO conhece ui.
 
 Teste rápido para saber se você acertou: **procure `import` de coisas de tela dentro do domínio**. Se `Produto.java` importa `Scanner`, ou chama `System.out`, a seta inverteu.
 
-E você já sabe fazer isso: nas aulas 30 e 31, `ProdutoConsoleUI` mostra e `ProdutoService` decide. **Não é conhecimento novo — é aplicar de forma consistente o que você já acertou uma vez.**
+E você já sabe fazer isso: na aula 31, `ProdutoConsoleUI` mostra e `ProdutoService` decide. **Não é conhecimento novo — é aplicar de forma consistente o que você já acertou uma vez.**
 
 ---
 
@@ -181,7 +181,7 @@ O teste que responde se você separou de verdade:
 
 > **Consigo usar essa classe num programa que não tem console?**
 
-Escreva um `main` temporário que usa `Produto` (da aula 18, já convertido para `BigDecimal` na R3) e que **não imprime nada** — só cria o produto, executa as operações e guarda os resultados em variáveis. Se para saber o que aconteceu você **precisa** olhar o que a classe imprimiu, a separação ainda não está feita.
+Escreva um `main` temporário que usa `Produto` (da aula 19, já convertido para `BigDecimal` na R3) e que **não imprime nada** — só cria o produto, executa as operações e guarda os resultados em variáveis. Se para saber o que aconteceu você **precisa** olhar o que a classe imprimiu, a separação ainda não está feita.
 
 Anote no [`PROGRESSO.md`](../../PROGRESSO.md) se conseguiu de primeira.
 
@@ -189,13 +189,13 @@ Anote no [`PROGRESSO.md`](../../PROGRESSO.md) se conseguiu de primeira.
 
 ## Bloco 6 — Sua vez
 
-**Tarefa 1 — Aula 18 (`Produto`).** Tire o `System.out` de dentro da entidade.
+**Tarefa 1 — Aula 19 (`Produto`).** Tire o `System.out` de dentro da entidade.
 - `setPreco` e `setQuantidade` devem **recusar** valor inválido (lançar `IllegalArgumentException`), em vez de trocar por zero
 - Adicione `toString()` descrevendo o produto
 - O `Main` passa a mostrar as informações e a tratar o erro
 - Critério final: `grep -n "System.out" entities/Produto.java` não retorna nada
 
-**Tarefa 2 — Aula 21 (`Conta` e `ContaEspecial`).**
+**Tarefa 2 — Aula 22 (`Conta` e `ContaEspecial`).**
 - `sacar` deixa de imprimir "Saldo insuficiente" e passa a sinalizar a falha para quem chamou
 - `exibirSaldo()` sai da entidade; quem mostra é o `Main`
 - Pergunta para responder no README da aula: *com a mudança, `ContaEspecial` ainda consegue permitir saldo negativo até o limite? Isso é desejável?* (essa pergunta volta na aula P3)
@@ -204,7 +204,7 @@ Anote no [`PROGRESSO.md`](../../PROGRESSO.md) se conseguiu de primeira.
 - O serviço passa a **devolver** o resultado (texto ou objeto) em vez de imprimir
 - Quem imprime é o `Menu`/`Main`
 
-> **Deixe as aulas 19, 20 e 23 como estão.** Elas são demonstrações didáticas curtas, e o custo de mexer não se paga. Anote no README de cada uma: *"exibe direto na entidade por ser demonstração; o padrão correto está na aula 31"*. Reconhecer exceção consciente à regra é diferente de não conhecer a regra.
+> **Deixe as aulas 20, 21 e 24 como estão.** Elas são demonstrações didáticas curtas, e o custo de mexer não se paga. Anote no README de cada uma: *"exibe direto na entidade por ser demonstração; o padrão correto está na aula 31"*. Reconhecer exceção consciente à regra é diferente de não conhecer a regra.
 
 ---
 

@@ -83,7 +83,7 @@ Porque a JVM procura por um método chamado exatamente `main` (minúsculo). Ou s
 
 Boa parte do trabalho de backend é justamente empurrar erros da segunda categoria para a primeira: tipos fortes, validação na entrada, testes automatizados. Guarde essa frase, ela volta em várias aulas.
 
-Esse erro do `M` maiúsculo está na sua [aula 18](../../../01-fundamentos/18-encapsulamento-e-modificadores/).
+Esse erro do `M` maiúsculo está na sua [aula 19](../../../01-fundamentos/19-encapsulamento-e-modificadores/).
 
 ---
 
@@ -165,8 +165,8 @@ Aí vale a pena parar e pensar em automatizar: o comando `find` lista os arquivo
 | 14-estruturas-de-repeticao | `repeticao.java` | `Repeticao.java` |
 | 15-operadores-bitwise | `bitwise.java` | `Bitwise.java` |
 | 16-manipulacao-de-strings | `manString.java` | `ManString.java` |
-| 17-classes-e-objetos | `application/main.java`, `entities/contaBancaria.java` | `Main.java`, `ContaBancaria.java` |
-| 18-encapsulamento-e-modificadores | `application/main.java`, `entities/produto.java` | `Main.java`, `Produto.java` |
+| 18-classes-e-objetos | `application/main.java`, `entities/contaBancaria.java` | `Main.java`, `ContaBancaria.java` |
+| 19-encapsulamento-e-modificadores | `application/main.java`, `entities/produto.java` | `Main.java`, `Produto.java` |
 
 **Katas:** `01-operacoes-basicas/src/operBasica.java` → `OperBasica.java` · `02-salario/src/salario.java` → `Salario.java` · `03-venda/src/venda.java` → `Venda.java`
 
@@ -188,7 +188,7 @@ Anote os dois placares no [`PROGRESSO.md`](../../PROGRESSO.md). Ver "20 falhas �
 
 ## Bloco 6 — Caça ao bug
 
-**Tarefa:** a aula 18 tem o `main` com `M` maiúsculo. Corrija e prove que rodou.
+**Tarefa:** a aula 19 tem o `main` com `M` maiúsculo. Corrija e prove que rodou.
 
 **Critérios de aceite:**
 1. `javac` compila a pasta inteira sem erro
