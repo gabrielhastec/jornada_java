@@ -9,7 +9,7 @@
 
 Este é o modelo que funcionou para você em JavaScript, adaptado: **cada aula acrescenta uma funcionalidade ao mesmo sistema**. No fim da trilha você não tem 30 exercícios soltos — tem **um sistema completo**, construído por você, que continua evoluindo com features novas.
 
-O sistema é o **[Sistema de Gestão da Loja](../03-projetos/00-loja-console/)**, e ele já começou: as aulas 30 e 31 têm `domain/Produto`, `repository/ProdutoRepository`, `service/ProdutoService` e `ui/ProdutoConsoleUI`. É esse código que vira a base.
+O sistema é o **[Sistema de Gestão da Loja](../03-projetos/00-loja-console/)**, e ele já começou: a aula 31 tem `domain/Produto`, `repository/ProdutoRepository`, `service/ProdutoService` e `ui/ProdutoConsoleUI`. É esse código que vira a base.
 
 ```
 Fase R    console cru, cadastro de produto
@@ -33,15 +33,15 @@ Fase PRO  sistema pronto para produção
 
 # Fase R — Revisão (semanas 1–5, ~50h)
 
-> **Por que começar aqui:** a [auditoria](AUDITORIA.md) encontrou **20 de 40 pastas que não compilam** e uma aula que ensina o oposto do conceito correto (aula 18, encapsulamento). Não dá para construir em cima disso. E como é revisão, o ritmo é rápido: o objetivo não é reaprender `if`, é **consertar, entender por que quebrou, e fixar a convenção**.
+> **Por que começar aqui:** a [auditoria](AUDITORIA.md) encontrou **20 de 40 pastas que não compilam** e uma aula que ensina o oposto do conceito correto (aula 19, encapsulamento). Não dá para construir em cima disso. E como é revisão, o ritmo é rápido: o objetivo não é reaprender `if`, é **consertar, entender por que quebrou, e fixar a convenção**.
 
 | Semana | Tema | O que você faz | Achados da auditoria resolvidos |
 |---|---|---|---|
 | **R1** | Convenções da linguagem e o sistema de arquivos | Corrige os 22 arquivos com nome ≠ classe; entende por que o Windows escondeu o erro e por que isso quebra o build no Linux | 1, 2 |
-| **R2** | Base rápida: tipos, operadores, condicionais, laços | Roda e confere as aulas 01–16 já corrigidas; refaz 3 exercícios pequenos de lógica sem consultar | — |
-| **R3** | Dinheiro, precisão e o tipo certo para cada coisa | Entende por que `double` erra centavo; troca por `BigDecimal` nas aulas 17–21 e no kata 02 | 3 |
+| **R2** | Base rápida: tipos, operadores, condicionais, laços, métodos | Roda e confere as aulas 01–17 já corrigidas; refaz 3 exercícios pequenos de lógica sem consultar | — |
+| **R3** | Dinheiro, precisão e o tipo certo para cada coisa | Entende por que `double` erra centavo; troca por `BigDecimal` nas aulas 18–22 e no kata 02 | 3 |
 | **R4** | Fronteira entre domínio e interface | Tira os `System.out` de dentro das entidades e serviços (11 arquivos): o domínio decide, a `ui` mostra | 5 |
-| **R5** | O sistema nasce | Move o código das aulas 30/31 para `03-projetos/00-loja-console/`, já com as correções acima. **A partir daqui, toda aula acrescenta algo aqui dentro** | — |
+| **R5** | O sistema nasce | Move o código da aula 31 para `03-projetos/00-loja-console/`, já com as correções acima. **A partir daqui, toda aula acrescenta algo aqui dentro** | — |
 
 **Entregável da fase:** todas as 40 pastas compilando, e o sistema da loja rodando com cadastro e listagem de produtos, com preço em `BigDecimal` e sem regra de negócio imprimindo em tela.
 

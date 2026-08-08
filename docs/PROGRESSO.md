@@ -55,7 +55,7 @@ Antes de montar a trilha nova, todo o conteúdo foi auditado — compilação de
 
 **A causa da maior parte:** o commit que padronizou os nomes das classes para `PascalCase` não renomeou os arquivos, e o Windows escondeu o erro por ser *case-insensitive*.
 
-**O que a auditoria diz de bom:** nenhum `catch` vazio, nenhum recurso vazando, nenhum algoritmo errado. Os problemas são de convenção e de modelagem — e em vários pontos (aulas 30/31, katas 05 e 08) o padrão correto **já está aplicado**, o que mostra que o conhecimento chegou depois e o conteúdo antigo nunca foi revisitado.
+**O que a auditoria diz de bom:** nenhum `catch` vazio, nenhum recurso vazando, nenhum algoritmo errado. Os problemas são de convenção e de modelagem — e em vários pontos (aula 31, katas 05 e 08) o padrão correto **já está aplicado**, o que mostra que o conhecimento chegou depois e o conteúdo antigo nunca foi revisitado.
 
 ---
 

@@ -4,6 +4,8 @@
 
 Você suspeitava que havia "aula errada". Havia — e mais do que o esperado. Este documento é o **ponto de partida da nova trilha**: cada achado vira exercício de revisão, com semana marcada.
 
+> ⚠️ **Este documento é um retrato datado e não foi reescrito.** Em 07/08/2026 os fundamentos foram renumerados: **todos os números de aula de 17 a 31 citados aqui são os antigos.** A tabela de-para está [no fim do documento](#de-para-da-renumeração-de-07082026).
+
 ## Como a auditoria foi feita
 
 Do jeito que se faz num time de verdade, e que você vai repetir sozinho na Fase R:
@@ -242,3 +244,39 @@ Duas conclusões que valem mais que a lista de erros:
 ## Plano de correção
 
 Cada achado tem semana marcada na [trilha](TRILHA.md), na Fase R. Nenhuma correção é feita por mim: eu explico o conceito e reviso; a correção é sua — é ela que fixa o aprendizado.
+
+---
+
+## De-para da renumeração de 07/08/2026
+
+Esta auditoria foi escrita com a numeração antiga dos fundamentos. Duas mudanças aconteceram depois dela, ambas motivadas por achados deste documento:
+
+**1. A antiga aula 30 (tipos primitivos) foi absorvida pela [aula 03](../01-fundamentos/03-variaveis/).** O Achado 3 propunha corrigir dinheiro em `double`, mas a discussão de precisão de tipo estava na aula 30 — depois de 29 aulas usando `double` sem saber o que ele é. Com o conteúdo na aula 03, o critério para escolher o tipo passa a existir **antes** do primeiro uso. A pasta `30-tipos-primitivos/` foi removida; o código que havia nela era um retrato anterior do mesmo projeto que está na aula 31 (recuperável pelo histórico do git).
+
+**2. A vaga virou a nova [aula 17 — Métodos e modularização](../01-fundamentos/17-metodos/).** Era o buraco real da trilha: o estudo pulava do `main` direto para classes, sem nunca ensinar a escrever um método com parâmetro e retorno. Isso ajuda a explicar o Achado 6 (encapsulamento) e a dificuldade declarada com POO.
+
+**Como ler os números deste documento:**
+
+| Aqui está escrito | Hoje é |
+|---|---|
+| aulas 01–16 | inalteradas |
+| — | **17 — métodos** (nova) |
+| aula 17 (classes e objetos) | aula 18 |
+| aula 18 (encapsulamento) | aula 19 |
+| aula 19 (construtores) | aula 20 |
+| aula 20 (objetos) | aula 21 |
+| aula 21 (herança) | aula 22 |
+| aula 22 (polimorfismo) | aula 23 |
+| aula 23 (interfaces) | aula 24 |
+| aula 24 (arrays básico) | aula 25 |
+| aula 25 (arrays avançado) | aula 26 |
+| aula 26 (collections) | aula 27 |
+| aula 27 (generics) | aula 28 |
+| aula 28 (exceções) | aula 29 |
+| aula 29 (enums) | aula 30 |
+| aula 30 (tipos primitivos) | **removida** — conteúdo na aula 03 |
+| aula 31 (operadores de incremento) | inalterada |
+
+Onde este documento diz **"as aulas 30 e 31 já fazem isso certo"** (Achados 5 e 10 e a conclusão final), leia **"a aula 31"** — era a mesma estrutura em camadas, em duas versões.
+
+> **Pendência aberta pela renumeração:** a antiga aula 30 também ensinava **wrapper classes e autoboxing**, que não foram para a aula 03 (são objetos, e a aula 03 é anterior a POO). Esse conteúdo está hoje **sem cobertura no repositório** — o lugar natural é a aula 27 (collections), onde `Map<Integer, Produto>` obriga o autoboxing na prática.
