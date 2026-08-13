@@ -14,7 +14,7 @@ Repositório público da minha formação em engenharia de software com Java. N�
 |---|---|---|
 | [`01-fundamentos/`](01-fundamentos/) | 31 aulas de base da linguagem, do `System.out.println` a generics e exceções | Registro da base. Cada aula tem README próprio |
 | [`02-katas/`](02-katas/) | 9 exercícios com domínio de negócio (folha de pagamento, análise de crédito, caixa eletrônico, conta bancária) | Onde os conceitos viram regra de negócio |
-| [`03-projetos/`](03-projetos/) | Sistemas de ponta a ponta, cada um com seu build, banco, testes e deploy | O portfólio de verdade |
+| [`03-projetos/`](03-projetos/) | Sistemas de ponta a ponta, em cenários diferentes, cada um com seu build, banco, testes e deploy | O portfólio de verdade |
 | [`04-desafios/`](04-desafios/) | Desafios técnicos de mercado resolvidos com tempo cronometrado e sem IA | Simulação de prova técnica |
 | [`05-laboratorios/`](05-laboratorios/) | Experimentos curtos e isolados: nginx, JWT, Redis, multi-tenant, filas | Aprender uma peça de infraestrutura por vez, antes de usá-la num projeto |
 | [`docs/`](docs/) | Trilha de estudos, glossário, fichas de conceito e decisões de arquitetura (ADRs) | O "porquê" de tudo que está aqui |
@@ -23,14 +23,15 @@ Repositório público da minha formação em engenharia de software com Java. N�
 
 ## Projetos
 
-| Projeto | Domínio | O que demonstra | Status |
-|---|---|---|---|
-| [00 — Sistema da Loja (console)](03-projetos/00-loja-console/) | Varejo | **O sistema que cresce a cada aula**: modelagem, invariantes, Strategy, coleções, exceções, generics, testes | 🌱 nasce na aula R5 |
-| [01 — Catálogo API](03-projetos/01-catalogo-api/) | E-commerce | O mesmo domínio como API REST: JPA/Hibernate, Flyway, PostgreSQL, Docker, erro padronizado, OpenAPI | 🚧 branch `feat/catalogo-api` |
-| 02 — Gestão de equipes | SaaS B2B | Autenticação JWT, RBAC, multi-tenant, isolamento de dados | ⏳ planejado |
-| 03 — Núcleo de pagamentos | Financeiro | Idempotência, concorrência, transações, auditoria, testes de regra de negócio | ⏳ planejado |
-| 04 — Integrador + notificações | Integração | API externa, retry/circuit breaker, cache (Redis), fila (RabbitMQ), agendamento | ⏳ planejado |
-| 05 — Capstone de carga | Performance | nginx como load balancer, réplicas, limite de CPU/memória, medição sob carga | ⏳ planejado |
+Projetos em cenários diferentes. Cada um tem um motor próprio: um é guiado pela trilha, um por um curso, e um é escolha minha do começo ao fim. O índice comentado está em [`03-projetos/`](03-projetos/).
+
+| Projeto | Domínio | O que demonstra | Motor | Status |
+|---|---|---|---|---|
+| [01 — Loja](03-projetos/01-loja/) | Varejo → e-commerce | **O sistema que cresce a cada aula**: modelagem, invariantes, Strategy, coleções, exceções, generics, testes, e a API endurecida para produção | Trilha | 🌱 nasce na aula R5 |
+| [02 — Task Manager](03-projetos/02-taskmanager/) | Produtividade | Java moderno (`record`, `enum`), Spring Boot 4, Gradle, entidade com comportamento | Curso Santander/DIO | 🚧 domínio iniciado |
+| [03 — (a definir)](03-projetos/03-produto-a-definir/) | Produto próprio | Autonomia: escolher o problema, modelar e entregar — [3 propostas na mesa](03-projetos/03-produto-a-definir/) | Meu | 💡 decisão pendente |
+
+> Os temas que antes estavam listados como projetos separados (pagamentos, integrações, carga) não sumiram: eles entram como **fases dos projetos 01 e 03** e como experimentos isolados em [`05-laboratorios/`](05-laboratorios/). Um sistema levado longe prova mais que cinco começados.
 
 ---
 
@@ -44,7 +45,7 @@ O diário, com o que travou e o que foi decidido a cada semana, está em **[`doc
 |---|---|---|
 | R — Revisão | Corrigir o que a auditoria encontrou, base rápida, dinheiro e camadas | 🚧 em andamento |
 | POO — Orientação a objetos com propósito | Modelagem, invariantes, composição, Strategy, coleções, exceções, generics, testes | ⏳ |
-| WEB — O mesmo sistema como API | HTTP, Spring Boot, DTO, ORM, migrations, Docker, deploy | ⏳ |
+| WEB — A API endurecida para produção | HTTP a sério, DTO, ORM, migrations, Docker, deploy | ⏳ |
 | PRO — Segurança, integração e escala | JWT, RBAC, multi-tenant, cache, filas, concorrência, observabilidade | ⏳ |
 | ARQ — Arquitetura e borda | nginx, edge, DDD tático, hexagonal, CI/CD, system design | ⏳ |
 
@@ -58,10 +59,14 @@ O diário, com o que travou e o que foi decidido a cada semana, está em **[`doc
 cd 02-katas/09-conta-bancaria && javac -d out $(find src -name "*.java") && java -cp out application.App
 ```
 
-**Projetos** (Maven + Docker):
+**Projetos** (Spring Boot — Maven no 01, Gradle no 02):
 
 ```bash
-cd 03-projetos/01-catalogo-api && docker compose up -d && mvn spring-boot:run
+cd 03-projetos/01-loja && ./mvnw spring-boot:run
+```
+
+```bash
+cd 03-projetos/02-taskmanager && ./gradlew bootRun
 ```
 
 ---
