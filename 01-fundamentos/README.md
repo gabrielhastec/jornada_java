@@ -52,8 +52,6 @@
 | 30 | [Enums](30-enums/) | constantes com estado e comportamento |
 | 31 | [Operadores de incremento](31-operadores-de-incremento/) | `++`, `--`, pré e pós |
 
-> **Renumeração de 07/08/2026.** A antiga aula 30 (tipos primitivos) foi absorvida pela [Aula 03](03-variaveis/), onde o assunto pertence — não fazia sentido discutir precisão de tipo depois de 29 aulas usando os tipos. A vaga virou a [Aula 17](17-metodos/), **métodos**, que era o buraco real da trilha: até então o estudo pulava do `main` direto para classes. Com isso, as aulas 17–29 antigas viraram 18–30. Referências com a numeração antiga na [auditoria](../docs/AUDITORIA.md) seguem válidas — há um de-para no fim daquele documento.
-
 ## Como rodar
 
 ```bash
