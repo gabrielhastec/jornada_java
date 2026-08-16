@@ -9,19 +9,33 @@
 
 Este é o modelo que funcionou para você em JavaScript, adaptado: **cada aula acrescenta uma funcionalidade ao mesmo sistema**. No fim da trilha você não tem 30 exercícios soltos — tem **um sistema completo**, construído por você, que continua evoluindo com features novas.
 
-O sistema é o **[Sistema de Gestão da Loja](../03-projetos/00-loja-console/)**, e ele já começou: a aula 31 tem `domain/Produto`, `repository/ProdutoRepository`, `service/ProdutoService` e `ui/ProdutoConsoleUI`. É esse código que vira a base.
+O sistema é o **[Projeto 01 — Loja](../03-projetos/01-loja/)**, e ele já começou dos dois lados: a aula 31 tem `domain/Produto`, `repository/ProdutoRepository`, `service/ProdutoService` e `ui/ProdutoConsoleUI`; o projeto já tem o esqueleto Spring Boot de pé. É juntando os dois que o sistema nasce.
 
 ```
-Fase R    console cru, cadastro de produto
-   ↓      + estoque, preço protegido, cliente, venda, pagamento, relatórios
-Fase POO  sistema de loja completo em Java puro, com regras de negócio de verdade
-   ↓      + HTTP, banco de dados, migrations
-Fase WEB  o MESMO domínio exposto como API REST (vira o 01-catalogo-api)
+Fase R    API de pé: CRUD de produto, com o domínio em Java puro isolado do framework
+   ↓      + estoque, preço protegido, cliente, carrinho, pagamento, relatórios
+Fase POO  regra de negócio de verdade dentro do domínio — Spring só na borda
+   ↓      + HTTP a sério, DTO, Postgres, migrations
+Fase WEB  a MESMA API endurecida para produção
    ↓      + autenticação, permissão, integrações
 Fase PRO  sistema pronto para produção
 ```
 
-**Por que esse domínio:** loja tem tudo que um sistema real tem — dinheiro (que não pode errar um centavo), estoque (que não pode ficar negativo), regras que mudam (descontos, formas de pagamento), relatórios e histórico. E é o mesmo domínio do [`01-catalogo-api`](../03-projetos/01-catalogo-api/), então nada é jogado fora na virada para web.
+**Por que esse domínio:** loja tem tudo que um sistema real tem — dinheiro (que não pode errar um centavo), estoque (que não pode ficar negativo), regras que mudam (descontos, formas de pagamento), relatórios e histórico.
+
+## A decisão que muda o formato da trilha: Spring desde o primeiro dia
+
+O sistema **não** passa por uma fase de console. O CRUD já nasce como API REST. Isso troca a ordem clássica de curso ("primeiro Java puro, depois framework") por outra:
+
+> **O framework fica na borda. O domínio é Java puro.**
+
+`Produto`, `Dinheiro` e `StatusPedido` são classes Java comuns — sem `@Autowired`, sem `import org.springframework` — testáveis sem subir a aplicação. Spring aparece no `controller` e no `repository`, que são fronteira, não regra de negócio.
+
+**O ganho:** desde a semana 5 existe um sistema que responde HTTP e dá para mostrar. E a Fase POO continua sendo POO de verdade, porque os conceitos entram em classes limpas.
+
+**O custo, dito na cara:** a [regra 1 do método](METODO.md) diz que nada é exigido antes de ser ensinado — e usar Spring na R5 exige Spring. Por isso a **R5 virou uma aula maior**, que explica o mínimo necessário (o que é injeção de dependência, o que `@RestController`, `@Service` e `@Repository` de fato fazem) antes de usar. A **W2** volta ao assunto para aprofundar. Usar antes de dominar é aceitável; usar sem entender, não.
+
+**O risco a vigiar:** anotação de framework vazando para dentro do domínio. Se `Produto` virar `@Entity`, a Fase POO vira "decorei onde põe a anotação" — o problema exato que esta trilha existe para resolver. A aula **P1** trata essa fronteira de forma explícita e a decisão vira ADR.
 
 ## Duas regras que valem para toda aula
 
@@ -41,9 +55,9 @@ Fase PRO  sistema pronto para produção
 | **R2** | Base rápida: tipos, operadores, condicionais, laços, métodos | Roda e confere as aulas 01–17 já corrigidas; refaz 3 exercícios pequenos de lógica sem consultar | — |
 | **R3** | Dinheiro, precisão e o tipo certo para cada coisa | Entende por que `double` erra centavo; troca por `BigDecimal` nas aulas 18–22 e no kata 02 | 3 |
 | **R4** | Fronteira entre domínio e interface | Tira os `System.out` de dentro das entidades e serviços (11 arquivos): o domínio decide, a `ui` mostra | 5 |
-| **R5** | O sistema nasce | Move o código da aula 31 para `03-projetos/00-loja-console/`, já com as correções acima. **A partir daqui, toda aula acrescenta algo aqui dentro** | — |
+| **R5** | O sistema nasce · Spring Boot, o mínimo para começar | Leva o domínio da aula 31 (já corrigido em R1–R4) para `03-projetos/01-loja/` e entrega `POST /produtos` e `GET /produtos` funcionando. Aprende o que é injeção de dependência e o que `@RestController`/`@Service`/`@Repository` fazem. **A partir daqui, toda aula acrescenta algo aqui dentro** | — |
 
-**Entregável da fase:** todas as 40 pastas compilando, e o sistema da loja rodando com cadastro e listagem de produtos, com preço em `BigDecimal` e sem regra de negócio imprimindo em tela.
+**Entregável da fase:** todas as pastas de fundamentos e katas compilando, e a API da loja no ar em `localhost`, cadastrando e listando produtos, com preço em `BigDecimal`, sem regra de negócio imprimindo em tela e sem `import org.springframework` dentro do domínio.
 
 **Checkpoint:** você explica, sem consultar, por que `variaveisJava.java` com `public class VariaveisJava` não compila, e por que `0.1 + 0.2 != 0.3`.
 
@@ -66,20 +80,20 @@ Fase PRO  sistema pronto para produção
 | **P9** | Como extrair informação de uma coleção sem laço aninhado? | `Stream`, `Optional`, `Collectors.groupingBy`, `Comparator` | Relatórios: faturamento por categoria, top 5 produtos, ticket médio |
 | **P10** | Como eu **provo** que a regra funciona — inclusive nos casos ruins? | JUnit 5, `assertThrows`, arrange-act-assert, o que **não** testar | Testes das regras críticas: estoque negativo, pagamento inválido, transição de status |
 
-**Entregável da fase:** sistema de loja em Java puro, em camadas, com regras de negócio protegidas, relatórios e testes — rodando no console e pronto para ganhar uma casca web.
+**Entregável da fase:** a loja em camadas, com regras de negócio protegidas dentro de um domínio em Java puro, relatórios e testes — respondendo por HTTP e pronta para endurecer.
 
 **Checkpoint:** você recebe um requisito novo ("a loja quer vender combo com desconto progressivo") e consegue dizer, **antes de codar**, quais classes cria, quais altera, e por quê.
 
 ---
 
-# Fase WEB — O mesmo sistema como API REST (semanas 16–23, ~80h)
+# Fase WEB — A API endurecida para produção (semanas 16–23, ~80h)
 
-> Nada é reescrito do zero: o domínio construído na Fase POO ganha uma camada HTTP e um banco de dados. É a transição que a maioria dos cursos pula — e é onde seu [`01-catalogo-api`](../03-projetos/01-catalogo-api/) entra.
+> Nada é reescrito do zero. A API já existe desde a R5 — o que muda aqui é a qualidade dela: os endpoints deixam de ser "funciona no Postman" e passam a aguentar rede instável, cliente mal-educado, banco real e volume. É a etapa que a maioria dos cursos pula, porque parar no CRUD que responde 200 é bem mais rápido.
 
 | Sem. | Tema | O problema real que motiva |
 |---|---|---|
 | **W1** | HTTP de verdade: métodos, status, cabeçalhos, idempotência | Um POST repetido por falha de rede criou o pedido duas vezes |
-| **W2** | Spring Boot e injeção de dependência | Trocar a forma de pagamento exigiria alterar 12 arquivos |
+| **W2** | Spring Boot a fundo: injeção de dependência, escopos, configuração | Na R5 você usou `@Service` e construtor injetado porque a aula mandou; aqui você entende o que o contêiner faz — e por que trocar a forma de pagamento não deveria exigir alterar 12 arquivos |
 | **W3** | DTO × entidade, validação na borda | A API vazou campo interno porque devolvia a entidade direto |
 | **W4** | Banco de dados e ORM (JPA/Hibernate) | Listar 100 produtos disparou 101 consultas ([N+1](conceitos/orm.md)) |
 | **W5** | Migrations com Flyway | O deploy quebrou: a coluna existia na máquina do dev, não em produção |
