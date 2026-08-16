@@ -1,0 +1,50 @@
+### Coleção de requisições do Catálogo API
+### Rode com a extensão REST Client (VS Code) ou o cliente HTTP do IntelliJ.
+### Cada requisicao abaixo tem, no comentario, o status que ela DEVE devolver.
+### Enquanto os endpoints nao existem, a resposta e 404 - isso e o roteiro da Fase 2.
+
+@host = http://localhost:8080
+
+### Health check -> 200
+GET {{host}}/actuator/health
+
+### Listar produtos -> 200
+GET {{host}}/product
+
+### Buscar por id existente -> 200
+GET {{host}}/product/1
+
+### Buscar por id inexistente -> 404 (e NAO 500)
+GET {{host}}/product/999999
+
+### Criar produto -> 201 + header Location apontando para o recurso criado
+POST {{host}}/product
+Content-Type: application/json
+
+{
+  "name": "Teclado mecanico",
+  "description": "ABNT2, switch marrom",
+  "price": 349.90
+}
+
+### Criar produto invalido (preco negativo, nome vazio) -> 422 com a lista de campos com erro
+POST {{host}}/product
+Content-Type: application/json
+
+{
+  "name": "",
+  "price": -10
+}
+
+### Atualizar produto inteiro -> 200 (PUT e idempotente: repetir da o mesmo resultado)
+PUT {{host}}/product/1
+Content-Type: application/json
+
+{
+  "name": "Teclado mecanico ABNT2",
+  "description": "switch marrom",
+  "price": 329.90
+}
+
+### Remover produto -> 204 sem corpo
+DELETE {{host}}/product/1

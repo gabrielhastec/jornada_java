@@ -1,0 +1,53 @@
+# Perfil "postgres" — NAO carrega por padrao.
+#
+# Hoje a aplicacao sobe com H2 em memoria (application.properties).
+# Este arquivo e o destino: Postgres de verdade, esquema versionado por Flyway.
+#
+# Para ativar (aula W4/W5) faltam duas coisas:
+#   1. Adicionar no pom.xml: org.postgresql:postgresql,
+#      org.flywaydb:flyway-core e org.flywaydb:flyway-database-postgresql
+#   2. Subir o banco:  docker compose up -d
+#
+# Depois disso:
+#   ./mvnw spring-boot:run -Dspring-boot.run.profiles=postgres
+#
+# Recuperado do antigo catalogo-api (commit ea0bd29) e adaptado.
+
+spring:
+  # Credenciais vem do ambiente. Nunca escreva senha real em arquivo versionado:
+  # os valores depois do ":-" sao apenas o padrao para desenvolvimento local.
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/loja}
+    username: ${DB_USER:loja}
+    password: ${DB_PASSWORD:loja}
+
+  jpa:
+    # NUNCA use "update" ou "create" em projeto serio: quem manda no schema e o Flyway.
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+
+server:
+  port: ${SERVER_PORT:8080}
+  error:
+    include-message: always
+
+# Endpoint de saude: /actuator/health e o que um orquestrador (Docker, Kubernetes)
+# consulta para saber se a aplicacao pode receber trafego.
+# Exige a dependencia spring-boot-starter-actuator no pom.xml.
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+
+logging:
+  level:
+    org.hibernate.SQL: ${LOG_SQL:INFO}

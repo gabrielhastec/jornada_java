@@ -1,0 +1,28 @@
+# Sobe o Postgres de desenvolvimento com um comando:
+#   docker compose up -d
+# Derruba tudo (mantendo os dados):
+#   docker compose down
+# Derruba e APAGA os dados do volume:
+#   docker compose down -v
+services:
+  db:
+    image: postgres:17-alpine
+    container_name: loja-db
+    environment:
+      POSTGRES_DB: loja
+      POSTGRES_USER: loja
+      POSTGRES_PASSWORD: loja
+    ports:
+      # host:container -> a aplicacao roda fora do Docker e acessa localhost:5432
+      - "5432:5432"
+    volumes:
+      - loja-pgdata:/var/lib/postgresql/data
+    healthcheck:
+      # Enquanto este comando falhar, o container e considerado "nao pronto".
+      test: ["CMD-SHELL", "pg_isready -U loja -d loja"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+volumes:
+  loja-pgdata:
