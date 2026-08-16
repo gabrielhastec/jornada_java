@@ -14,7 +14,7 @@ A partir daqui, toda aula segue a mesma estrutura.
 
 ## O sistema que cresce a cada aula
 
-Da Fase R em diante, **cada aula acrescenta uma funcionalidade ao mesmo sistema**: o [Sistema de Gestão da Loja](../03-projetos/00-loja-console/). O conceito da aula não é praticado num exercício descartável — ele entra como feature de um sistema que continua existindo.
+Da Fase R em diante, **cada aula acrescenta uma funcionalidade ao mesmo sistema**: o [Projeto 01 — Loja](../03-projetos/01-loja/). O conceito da aula não é praticado num exercício descartável — ele entra como feature de um sistema que continua existindo.
 
 É o modelo que já funcionou para mim na trilha de JavaScript: ao final, o resultado não é uma pasta com 30 exercícios soltos, e sim **um sistema completo para o portfólio**, que continua evoluindo com features novas depois que a trilha acaba.
 
