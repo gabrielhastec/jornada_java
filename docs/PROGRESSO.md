@@ -28,13 +28,22 @@ Registro semanal. Serve para três coisas: ver evolução quando bater a sensaç
 
 **Como destravei:** _(preencher)_
 
-**Decisão tomada:** reorganização em 5 trilhas → [`ADR-001`](adr/ADR-001-reorganizacao-do-repositorio.md)
+**Decisão tomada:**
+- reorganização em 5 trilhas → [`ADR-001`](adr/ADR-001-reorganizacao-do-repositorio.md)
+- três projetos independentes, e Spring desde o primeiro dia no projeto 01 → [`ADR-002`](adr/ADR-002-tres-projetos-e-spring-desde-o-inicio.md)
 
 **Entregue:**
 - Repositório reorganizado: `01-fundamentos`, `02-katas`, `03-projetos`, `04-desafios`, `05-laboratorios`, `docs`
 - `.gitignore` corrigido, 9 arquivos `.class` removidos do controle de versão
 - `03-projetos/01-catalogo-api` voltou a buildar (tinha `mvnw` e `src`, mas **não tinha `pom.xml`** — por isso nunca compilou)
 - Trilha de estudos escrita: [`TRILHA.md`](TRILHA.md) e [`METODO.md`](METODO.md)
+
+**Entregue (08/08):**
+- Aula 03 reescrita como **Variáveis e tipos de dados**, absorvendo a antiga aula 30; métodos de `String` consolidados na aula 16
+- Nova **aula 17 — Métodos e modularização**, preenchendo o salto que existia entre o `main` e as classes
+- Fundamentos renumerados: antigas 17–29 viraram 18–30 ([de-para](AUDITORIA.md#de-para-da-renumeração-de-08082026))
+- `03-projetos/` realinhado: `01-loja`, `02-taskmanager`, `03-produto-a-definir`, cada um com README próprio e um [índice](../03-projetos/) comentado
+- Três propostas escritas para o projeto 03 — decisão pendente
 
 **Explico sem olhar o código?** _(preencher)_
 
@@ -67,4 +76,4 @@ Antes de montar a trilha nova, todo o conteúdo foi auditado — compilação de
 | 2 | R2 — Base rápida (aulas 01–16) + caça ao bug | [`trilha/fase-0/aula-01-caca-ao-bug.md`](trilha/fase-0/aula-01-caca-ao-bug.md) |
 | 3 | R3 — Dinheiro não é `double` | [`trilha/fase-r/aula-r3-dinheiro.md`](trilha/fase-r/aula-r3-dinheiro.md) |
 | 4 | R4 — Onde o domínio termina e a tela começa | [`trilha/fase-r/aula-r4-fronteira-dominio-ui.md`](trilha/fase-r/aula-r4-fronteira-dominio-ui.md) |
-| 5 | R5 — O sistema nasce | [`00-loja-console`](../03-projetos/00-loja-console/) |
+| 5 | R5 — O sistema nasce | [`01-loja`](../03-projetos/01-loja/) |
