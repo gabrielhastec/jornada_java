@@ -130,7 +130,7 @@ Para o seu momento, `BigDecimal` é a escolha certa: é o padrão do mercado Jav
 | Situação | O que acontece |
 |---|---|
 | **Code review** | `double preco` num PR de sistema financeiro é comentário de bloqueio na hora. É um dos poucos itens que quase todo revisor pega |
-| **Banco de dados** | A coluna correta é `DECIMAL(10,2)` / `NUMERIC` — nunca `FLOAT`. Na sua migration `V1__create-table-product.sql` (branch `feat/catalogo-api`) você já usou `DECIMAL(10,2)`: acertou no banco e errou no Java |
+| **Banco de dados** | A coluna correta é `DECIMAL(10,2)` / `NUMERIC` — nunca `FLOAT`. Na sua migration `V1__create-table-product.sql` você já usou `DECIMAL(10,2)`: acertou no banco e errou no Java. Essa mesma coluna volta na aula **W5** do [`01-loja`](../../../03-projetos/01-loja/) |
 | **Entrevista técnica** | "Por que não usar `double` para dinheiro?" é pergunta clássica de vaga backend. Saber responder com o exemplo do `0.1 + 0.2` te destaca |
 | **API** | Preço serializado em JSON como `float` chega arredondado no front — o cliente vê R$ 19,99 e é cobrado R$ 20,00 |
 | **Relatórios** | Somar milhares de linhas com `double` produz totais que não batem com a soma manual. É o bug do Bloco 1 |

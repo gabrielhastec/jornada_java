@@ -228,4 +228,4 @@ No [`PROGRESSO.md`](../../PROGRESSO.md):
 
 ## Próxima aula
 
-**R5 — O sistema nasce:** juntar o que foi corrigido nas aulas R1 a R4 e criar o [`00-loja-console`](../../../03-projetos/00-loja-console/), o sistema que vai crescer a cada aula até virar a API da Fase WEB.
+**R5 — O sistema nasce:** juntar o que foi corrigido nas aulas R1 a R4 e levar o domínio para o [`01-loja`](../../../03-projetos/01-loja/), que já entrega `POST /produtos` e `GET /produtos` por HTTP. A partir dali, toda aula acrescenta uma funcionalidade nesse sistema. A regra que você acabou de aprender vira a fronteira mais importante do projeto: o `controller` mostra, o `domain` decide — e o domínio não importa `org.springframework`.
